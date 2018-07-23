@@ -38,3 +38,10 @@ input {
     width: 200px;
     ;
 }
+
+#inference-button {
+    background-color: yellow;
+    border: 3px dashed green;
+    margin: 25px;
+    padding: 25px;
+}

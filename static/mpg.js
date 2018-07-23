@@ -13,5 +13,14 @@ $(document).ready(function(){
       weight
     }
     console.log(data)
+
+    const response = await $.ajax('/inference',{
+      data: JSON.stringify(data),
+      method: "post",
+      contentType: "application/json"
+    })
+    console.log(response)
+    $('#mpg').val(response.prediction)
+
   })
 })
