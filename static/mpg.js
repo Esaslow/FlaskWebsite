@@ -24,9 +24,32 @@ $(document).ready(function(){
 
   })
   $('#scatter-button').click(async function(){
+    console.log($('#graph1')[0])
     console.log('scatter button clicked')
     const response = await $.ajax('/plot')
     console.log(response)
+    const mpg = response.map(a => a[0])
+    const weight = response.map(a => a[1])
+    console.log(mpg)
+    const trace = [{
+      x:weight,
+      y:mpg,
+      mode:'markers',
+      type:'scatter'
+    }];
+    const layout = {
+      xaxis:{
+        title:'Weight'
+      },
+      yaxis:{
+        title:'mpg'
+      },
+      title:'Scatter MPG vs Weight',
+      width:700,
+      height:300
+    }
+    Plotly.plot($('#graph1')[0],trace,layout)
+    $('#scatter-button').hide()
   })
 
 })
