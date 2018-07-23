@@ -42,6 +42,12 @@ input {
 #inference-button {
     background-color: yellow;
     border: 3px dashed green;
-    margin: 25px;
-    padding: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#inference {
+
+    margin: 10px;
+    padding: 10px;
 }

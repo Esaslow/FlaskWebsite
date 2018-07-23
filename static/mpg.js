@@ -23,4 +23,10 @@ $(document).ready(function(){
     $('#mpg').val(response.prediction)
 
   })
+  $('#scatter-button').click(async function(){
+    console.log('scatter button clicked')
+    const response = await $.ajax('/plot')
+    console.log(response)
+  })
+
 })
